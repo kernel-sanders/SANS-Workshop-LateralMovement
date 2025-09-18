@@ -1,7 +1,7 @@
 <powershell>
 # Set Administrator password
 $admin = [adsi]("WinNT://./administrator, user")
-$admin.PSBase.Invoke("SetPassword", "AnsibleAutomation123!")
+$admin.PSBase.Invoke("SetPassword", "password")
 
 # --- BEGIN ROBUST WINRM SETUP & FIREWALL DISABLING ---
 
