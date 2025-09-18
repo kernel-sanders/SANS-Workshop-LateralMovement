@@ -6,7 +6,7 @@
     type: dword
 
 - name: Disable firewall for Domain, Public and Private profiles
-  ansible.windows.win_firewall:
+  community.windows.win_firewall:
     state: disabled
     profiles:
       - Domain
