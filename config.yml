@@ -56,6 +56,8 @@ ludus:
     cpus: 2
     windows:
       sysprep: true
+    roles:
+      - badsectorlabs.ludus_elastic_agent       
   - vm_name: "{{ range_id }}-kali"
     hostname: "{{ range_id }}-kali"
     template: kali-x64-desktop-template
