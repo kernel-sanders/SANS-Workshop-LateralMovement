@@ -1,0 +1,1131 @@
+{
+    "lab": {
+        "hosts": {
+            "dc01": {
+                "hostname": "pwnzone-dc01",
+                "type": "dc",
+                "local_admin_password": "AnsibleAutomation123!",
+                "domain": "pwnzone.lab",
+                "path": "DC=pwnzone,DC=lab",
+                "scripts": [
+                    "sidhistory.ps1"
+                ],
+                "vulns": [
+                    "disable_firewall"
+                ],
+                "security": []
+            },
+            "dc02": {
+                "hostname": "sandbox-dc01",
+                "type": "dc",
+                "local_admin_password": "AnsibleAutomation123!",
+                "domain": "sandbox.pwnzone.lab",
+                "path": "DC=sandbox,DC=pwnzone,DC=lab",
+                "scripts": [],
+                "vulns": [
+                    "disable_firewall"
+                ]
+            },
+            "srv02": {
+                "hostname": "ws01",
+                "type": "server",
+                "local_admin_password": "AnsibleAutomation123!",
+                "domain": "sandbox.pwnzone.lab",
+                "path": "DC=sandbox,DC=pwnzone,DC=lab",
+                "use_laps": false,
+                "local_groups": {
+                    "Remote Desktop Users": [
+                        "sandbox\\jross"
+                    ]
+                },
+                "scripts": [],
+                "vulns": [
+                    "disable_firewall"
+                ]
+            },
+            "dc03": {
+                "hostname": "treasure-dc01",
+                "type": "dc",
+                "local_admin_password": "AnsibleAutomation123!",
+                "domain": "treasureisland.lab",
+                "path": "DC=treasureisland,DC=lab",
+                "scripts": [],
+                "vulns": [
+                    "disable_firewall"
+                ]
+            }
+        },
+        "domains": {
+            "pwnzone.lab": {
+                "dc": "dc01",
+                "domain_password": "AnsibleAutomation123!",
+                "netbios_name": "PWNZONE",
+                "trust": "treasureisland.lab",
+                "organisation_units": {
+                    "Sales": {
+                        "path": "DC=pwnzone,DC=lab"
+                    },
+                    "Engineering": {
+                        "path": "DC=pwnzone,DC=lab"
+                    },
+                    "HR": {
+                        "path": "DC=pwnzone,DC=lab"
+                    },
+                    "IT": {
+                        "path": "DC=pwnzone,DC=lab"
+                    },
+                    "Accounting": {
+                        "path": "DC=pwnzone,DC=lab"
+                    }
+                },
+                "groups": {
+                    "universal": {},
+                    "global": {
+                        "Sales": {
+                            "path": "OU=Sales,DC=pwnzone,DC=lab"
+                        },
+                        "Engineering": {
+                            "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                        },
+                        "HR": {
+                            "path": "OU=HR,DC=pwnzone,DC=lab"
+                        },
+                        "IT": {
+                            "path": "OU=IT,DC=pwnzone,DC=lab"
+                        },
+                        "Accounting": {
+                            "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                        }
+                    }
+                },
+                "users": {
+                    "mchang": {
+                        "firstname": "Megan",
+                        "surname": "Chang",
+                        "password": "UJ3CoHxL5vTbE9v",
+                        "city": "-",
+                        "description": "Megan Chang",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=pwnzone,DC=lab"
+                    },
+                    "rgreen": {
+                        "firstname": "Robert",
+                        "surname": "Green",
+                        "password": "yeRIKwCSIWtjcYo",
+                        "city": "-",
+                        "description": "Robert Green",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "wsullivan": {
+                        "firstname": "William",
+                        "surname": "Sullivan",
+                        "password": "KbVUeiNCCvMDHhl",
+                        "city": "-",
+                        "description": "William Sullivan",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "kturner": {
+                        "firstname": "Kristen",
+                        "surname": "Turner",
+                        "password": "3sNvIILjClcYJxk",
+                        "city": "-",
+                        "description": "Kristen Turner",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=pwnzone,DC=lab"
+                    },
+                    "tsilva": {
+                        "firstname": "Thomas",
+                        "surname": "Silva",
+                        "password": "3KKQIREaxpthGxn",
+                        "city": "-",
+                        "description": "Thomas Silva",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=pwnzone,DC=lab"
+                    },
+                    "rwagner": {
+                        "firstname": "Rebecca",
+                        "surname": "Wagner",
+                        "password": "FD5Zz9T0IXXih3N",
+                        "city": "-",
+                        "description": "Rebecca Wagner",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                    },
+                    "jcampos": {
+                        "firstname": "Juan",
+                        "surname": "Campos",
+                        "password": "ymn6SMrpmaGdtKa",
+                        "city": "-",
+                        "description": "Juan Campos",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                    },
+                    "cking": {
+                        "firstname": "Christine",
+                        "surname": "King",
+                        "password": "bqlO3Gbcm1VOPHV",
+                        "city": "-",
+                        "description": "Christine King",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "rmcgrath": {
+                        "firstname": "Renee",
+                        "surname": "Mcgrath",
+                        "password": "6fr6SPslEmcb7JX",
+                        "city": "-",
+                        "description": "Renee Mcgrath",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                    },
+                    "lbarrera": {
+                        "firstname": "Lisa",
+                        "surname": "Barrera",
+                        "password": "hQGsibC1CdxDlNd",
+                        "city": "-",
+                        "description": "Lisa Barrera",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                    },
+                    "kblair": {
+                        "firstname": "Kyle",
+                        "surname": "Blair",
+                        "password": "Y8RnzCcesdyiNYY",
+                        "city": "-",
+                        "description": "Kyle Blair",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=pwnzone,DC=lab"
+                    },
+                    "rsutton": {
+                        "firstname": "Rachel",
+                        "surname": "Sutton",
+                        "password": "RiHJGePqBACGmU0",
+                        "city": "-",
+                        "description": "Rachel Sutton",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=pwnzone,DC=lab"
+                    },
+                    "tgarcia": {
+                        "firstname": "Thomas",
+                        "surname": "Garcia",
+                        "password": "VwaLW3cMenFdcvA",
+                        "city": "-",
+                        "description": "Thomas Garcia",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "rcarr": {
+                        "firstname": "Ryan",
+                        "surname": "Carr",
+                        "password": "qe7N0i9Ycn0CoBl",
+                        "city": "-",
+                        "description": "Ryan Carr",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "rlevy": {
+                        "firstname": "Robin",
+                        "surname": "Levy",
+                        "password": "AJLCrqHUsqHkmyw",
+                        "city": "-",
+                        "description": "Robin Levy",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=pwnzone,DC=lab"
+                    },
+                    "tgrimes": {
+                        "firstname": "Thomas",
+                        "surname": "Grimes",
+                        "password": "dBGH1UMerDKjKbd",
+                        "city": "-",
+                        "description": "Thomas Grimes",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "jtrujillo": {
+                        "firstname": "Jorge",
+                        "surname": "Trujillo",
+                        "password": "YvoMFHHn3cToq62",
+                        "city": "-",
+                        "description": "Jorge Trujillo",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=pwnzone,DC=lab"
+                    },
+                    "asmith": {
+                        "firstname": "Ana",
+                        "surname": "Smith",
+                        "password": "MTDYZ7EDiyMKVG9",
+                        "city": "-",
+                        "description": "Ana Smith",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                    },
+                    "jross": {
+                        "firstname": "Jennifer",
+                        "surname": "Ross",
+                        "password": "AzACoyMIF6m4kWE",
+                        "city": "-",
+                        "description": "Jennifer Ross",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "mbarnett": {
+                        "firstname": "Mallory",
+                        "surname": "Barnett",
+                        "password": "QXRycMbt7JzphVz",
+                        "city": "-",
+                        "description": "Mallory Barnett",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=pwnzone,DC=lab"
+                    },
+                    "asnyder": {
+                        "firstname": "Aaron",
+                        "surname": "Snyder",
+                        "password": "FCY5WvLmuyA1c3z",
+                        "city": "-",
+                        "description": "Aaron Snyder",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "msanchez": {
+                        "firstname": "Mikayla",
+                        "surname": "Sanchez",
+                        "password": "ekzJUoESRNVrMSv",
+                        "city": "-",
+                        "description": "Mikayla Sanchez",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "mharrell": {
+                        "firstname": "Mark",
+                        "surname": "Harrell",
+                        "password": "yPdKussxfely30Z",
+                        "city": "-",
+                        "description": "Mark Harrell",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=pwnzone,DC=lab"
+                    },
+                    "jbradley": {
+                        "firstname": "James",
+                        "surname": "Bradley",
+                        "password": "pCcKMdSSr1rwWW9",
+                        "city": "-",
+                        "description": "James Bradley",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=pwnzone,DC=lab"
+                    },
+                    "jponce": {
+                        "firstname": "John",
+                        "surname": "Ponce",
+                        "password": "uBLacJCwoKJ4YDg",
+                        "city": "-",
+                        "description": "John Ponce",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "lwest": {
+                        "firstname": "Linda",
+                        "surname": "West",
+                        "password": "PzYHOGlX1dIt9Wq",
+                        "city": "-",
+                        "description": "Linda West",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "cflores": {
+                        "firstname": "Christopher",
+                        "surname": "Flores",
+                        "password": "JkRP4FqYOFvBr37",
+                        "city": "-",
+                        "description": "Christopher Flores",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=pwnzone,DC=lab"
+                    },
+                    "wcantu": {
+                        "firstname": "William",
+                        "surname": "Cantu",
+                        "password": "cnbkZhmjnQrBa2u",
+                        "city": "-",
+                        "description": "William Cantu",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=pwnzone,DC=lab"
+                    },
+                    "darnold": {
+                        "firstname": "Daniel",
+                        "surname": "Arnold",
+                        "password": "fZKewrz304kSoXw",
+                        "city": "-",
+                        "description": "Daniel Arnold",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                    },
+                    "jkelley": {
+                        "firstname": "Jasmine",
+                        "surname": "Kelley",
+                        "password": "ZYgnJgpJOXgp48f",
+                        "city": "-",
+                        "description": "Jasmine Kelley",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=pwnzone,DC=lab"
+                    },
+                    "lfernandez": {
+                        "firstname": "Lisa",
+                        "surname": "Fernandez",
+                        "password": "0Gy5g4XFX37dIT6",
+                        "city": "-",
+                        "description": "Lisa Fernandez",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                    },
+                    "tmorrison": {
+                        "firstname": "Tamara",
+                        "surname": "Morrison",
+                        "password": "sfkXWRGpiHkkRB8",
+                        "city": "-",
+                        "description": "Tamara Morrison",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "bwallace": {
+                        "firstname": "Briana",
+                        "surname": "Wallace",
+                        "password": "uGf1KvTcUAJro8v",
+                        "city": "-",
+                        "description": "Briana Wallace",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "ccruz": {
+                        "firstname": "Caitlyn",
+                        "surname": "Cruz",
+                        "password": "zBZtnmzZBeCp867",
+                        "city": "-",
+                        "description": "Caitlyn Cruz",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                    },
+                    "broberts": {
+                        "firstname": "Barbara",
+                        "surname": "Roberts",
+                        "password": "CGQ3tY4ugupwwfb",
+                        "city": "-",
+                        "description": "Barbara Roberts",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "jlopez": {
+                        "firstname": "Jaime",
+                        "surname": "Lopez",
+                        "password": "NRY2NI1jpdRZt9V",
+                        "city": "-",
+                        "description": "Jaime Lopez",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                    },
+                    "cdouglas": {
+                        "firstname": "Chloe",
+                        "surname": "Douglas",
+                        "password": "RnAq0KOqDsZSjlf",
+                        "city": "-",
+                        "description": "Chloe Douglas",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "tdavis": {
+                        "firstname": "Thomas",
+                        "surname": "Davis",
+                        "password": "twqgvbmeq62o0Zr",
+                        "city": "-",
+                        "description": "Thomas Davis",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "kmcdowell": {
+                        "firstname": "Katherine",
+                        "surname": "Mcdowell",
+                        "password": "FkWiByQCEfJDRrs",
+                        "city": "-",
+                        "description": "Katherine Mcdowell",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "skirby": {
+                        "firstname": "Sandra",
+                        "surname": "Kirby",
+                        "password": "k8gRCVzyHvwQe3A",
+                        "city": "-",
+                        "description": "Sandra Kirby",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "rleblanc": {
+                        "firstname": "Rachael",
+                        "surname": "Leblanc",
+                        "password": "zDcs6DoLXDOWCMP",
+                        "city": "-",
+                        "description": "Rachael Leblanc",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "amyers": {
+                        "firstname": "Amber",
+                        "surname": "Myers",
+                        "password": "Qom7nqHwoqonb39",
+                        "city": "-",
+                        "description": "Amber Myers",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "jhill": {
+                        "firstname": "Janet",
+                        "surname": "Hill",
+                        "password": "ZegGkjzM4OsGHMf",
+                        "city": "-",
+                        "description": "Janet Hill",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=pwnzone,DC=lab"
+                    },
+                    "latkinson": {
+                        "firstname": "Lisa",
+                        "surname": "Atkinson",
+                        "password": "BlCBj6TDLWEUGMx",
+                        "city": "-",
+                        "description": "Lisa Atkinson",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "plawrence": {
+                        "firstname": "Patty",
+                        "surname": "Lawrence",
+                        "password": "MCpFjW3MlT8Nine",
+                        "city": "-",
+                        "description": "Patty Lawrence",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "sriley": {
+                        "firstname": "Stephanie",
+                        "surname": "Riley",
+                        "password": "i3XnLqJsM0pkSB7",
+                        "city": "-",
+                        "description": "Stephanie Riley",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=pwnzone,DC=lab"
+                    },
+                    "skeller": {
+                        "firstname": "Shannon",
+                        "surname": "Keller",
+                        "password": "NEs1Gv1nARsZJmM",
+                        "city": "-",
+                        "description": "Shannon Keller",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=pwnzone,DC=lab"
+                    },
+                    "wstark": {
+                        "firstname": "Wendy",
+                        "surname": "Stark",
+                        "password": "j24ZFtb9JnznHLD",
+                        "city": "-",
+                        "description": "Wendy Stark",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=pwnzone,DC=lab"
+                    },
+                    "lmiller": {
+                        "firstname": "Laura",
+                        "surname": "Miller",
+                        "password": "77JQlnz71LmPC2U",
+                        "city": "-",
+                        "description": "Laura Miller",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=pwnzone,DC=lab"
+                    },
+                    "ctucker": {
+                        "firstname": "Chloe",
+                        "surname": "Tucker",
+                        "password": "g3LCP0XqN244KfC",
+                        "city": "-",
+                        "description": "Chloe Tucker",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=pwnzone,DC=lab"
+                    },
+                    "cbruce": {
+                        "firstname": "Crystal",
+                        "surname": "Bruce",
+                        "password": "nP747E00wb2RMoK",
+                        "city": "-",
+                        "description": "Crystal Bruce",
+                        "groups": [
+                            "Domain Admins"
+                        ],
+                        "path": "CN=Users,DC=pwnzone,DC=lab"
+                    },
+                    "jdennis": {
+                        "firstname": "John",
+                        "surname": "Dennis",
+                        "password": "78tfOWI8Yu0Vmiv",
+                        "city": "-",
+                        "description": "John Dennis",
+                        "groups": [
+                            "Domain Admins"
+                        ],
+                        "path": "CN=Users,DC=pwnzone,DC=lab"
+                    }
+                }
+            },
+            "sandbox.pwnzone.lab": {
+                "dc": "dc02",
+                "domain_password": "AnsibleAutomation123!",
+                "netbios_name": "SANDBOX",
+                "trust": "",
+                "organisation_units": {
+                    "Sales": {
+                        "path": "DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "Engineering": {
+                        "path": "DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "HR": {
+                        "path": "DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "IT": {
+                        "path": "DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "Accounting": {
+                        "path": "DC=sandbox,DC=pwnzone,DC=lab"
+                    }
+                },
+                "groups": {
+                    "universal": {},
+                    "global": {
+                        "Sales": {
+                            "path": "OU=Sales,DC=sandbox,DC=pwnzone,DC=lab"
+                        },
+                        "Engineering": {
+                            "path": "OU=Engineering,DC=sandbox,DC=pwnzone,DC=lab"
+                        },
+                        "HR": {
+                            "path": "OU=HR,DC=sandbox,DC=pwnzone,DC=lab"
+                        },
+                        "IT": {
+                            "path": "OU=IT,DC=sandbox,DC=pwnzone,DC=lab"
+                        },
+                        "Accounting": {
+                            "path": "OU=Accounting,DC=sandbox,DC=pwnzone,DC=lab"
+                        }
+                    }
+                },
+                "users": {
+                    "mchang": {
+                        "firstname": "Megan",
+                        "surname": "Chang",
+                        "password": "DGmUoeVr5IL1u0P",
+                        "city": "-",
+                        "description": "Megan Chang",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "rgreen": {
+                        "firstname": "Robert",
+                        "surname": "Green",
+                        "password": "tn0TKNI9Kh0gKD0",
+                        "city": "-",
+                        "description": "Robert Green",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "wsullivan": {
+                        "firstname": "William",
+                        "surname": "Sullivan",
+                        "password": "Nhs4tYW4WU4dGA9",
+                        "city": "-",
+                        "description": "William Sullivan",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "kturner": {
+                        "firstname": "Kristen",
+                        "surname": "Turner",
+                        "password": "de9c5xXUAst6KV5",
+                        "city": "-",
+                        "description": "Kristen Turner",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "tsilva": {
+                        "firstname": "Thomas",
+                        "surname": "Silva",
+                        "password": "5Y5e7FykmFse3te",
+                        "city": "-",
+                        "description": "Thomas Silva",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "rwagner": {
+                        "firstname": "Rebecca",
+                        "surname": "Wagner",
+                        "password": "yXu4OVsoGN2SeCR",
+                        "city": "-",
+                        "description": "Rebecca Wagner",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "jcampos": {
+                        "firstname": "Juan",
+                        "surname": "Campos",
+                        "password": "cvq6MCpTWjI0CYR",
+                        "city": "-",
+                        "description": "Juan Campos",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "cking": {
+                        "firstname": "Christine",
+                        "surname": "King",
+                        "password": "n2ZvNFOhmgJtQR1",
+                        "city": "-",
+                        "description": "Christine King",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "rmcgrath": {
+                        "firstname": "Renee",
+                        "surname": "Mcgrath",
+                        "password": "wwnClGfcqYzrnJT",
+                        "city": "-",
+                        "description": "Renee Mcgrath",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "lbarrera": {
+                        "firstname": "Lisa",
+                        "surname": "Barrera",
+                        "password": "ivAppTd6rvejZX3",
+                        "city": "-",
+                        "description": "Lisa Barrera",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "kblair": {
+                        "firstname": "Kyle",
+                        "surname": "Blair",
+                        "password": "7pocQn1LaVQ7KGH",
+                        "city": "-",
+                        "description": "Kyle Blair",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "rsutton": {
+                        "firstname": "Rachel",
+                        "surname": "Sutton",
+                        "password": "svYKGLWmeE5BM0r",
+                        "city": "-",
+                        "description": "Rachel Sutton",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "tgarcia": {
+                        "firstname": "Thomas",
+                        "surname": "Garcia",
+                        "password": "BL5pldyUmADfgCk",
+                        "city": "-",
+                        "description": "Thomas Garcia",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "rcarr": {
+                        "firstname": "Ryan",
+                        "surname": "Carr",
+                        "password": "g8YC7Yy2RPqJ3NN",
+                        "city": "-",
+                        "description": "Ryan Carr",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "rlevy": {
+                        "firstname": "Robin",
+                        "surname": "Levy",
+                        "password": "d1ZS7Qu21lIMs8a",
+                        "city": "-",
+                        "description": "Robin Levy",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "tgrimes": {
+                        "firstname": "Thomas",
+                        "surname": "Grimes",
+                        "password": "ZAtOPZY6Krxi52e",
+                        "city": "-",
+                        "description": "Thomas Grimes",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "jtrujillo": {
+                        "firstname": "Jorge",
+                        "surname": "Trujillo",
+                        "password": "DmcneYjOXkiNA5p",
+                        "city": "-",
+                        "description": "Jorge Trujillo",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "asmith": {
+                        "firstname": "Ana",
+                        "surname": "Smith",
+                        "password": "UXuaMsySwHgGxT5",
+                        "city": "-",
+                        "description": "Ana Smith",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "jross": {
+                        "firstname": "Jennifer",
+                        "surname": "Ross",
+                        "password": "0nz2xQ44GumoWpl",
+                        "city": "-",
+                        "description": "Jennifer Ross",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "mbarnett": {
+                        "firstname": "Mallory",
+                        "surname": "Barnett",
+                        "password": "1rn8y4FDjp4mNNU",
+                        "city": "-",
+                        "description": "Mallory Barnett",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "adm_asnyder": {
+                        "firstname": "Aaron",
+                        "surname": "Snyder",
+                        "password": "5u8p19T1jVqkW6K",
+                        "city": "-",
+                        "description": "Aaron Snyder",
+                        "groups": [
+                            "Domain Admins"
+                        ],
+                        "path": "CN=Users,DC=sandbox,DC=pwnzone,DC=lab"
+                    },
+                    "adm_msanchez": {
+                        "firstname": "Mikayla",
+                        "surname": "Sanchez",
+                        "password": "9RSXIr9XecuQTNY",
+                        "city": "-",
+                        "description": "Mikayla Sanchez",
+                        "groups": [
+                            "Domain Admins"
+                        ],
+                        "path": "CN=Users,DC=sandbox,DC=pwnzone,DC=lab"
+                    }
+                }
+            },
+            "treasureisland.lab": {
+                "dc": "dc03",
+                "domain_password": "AnsibleAutomation123!",
+                "netbios_name": "TREASUREISLAND",
+                "trust": "pwnzone.lab",
+                "organisation_units": {
+                    "Sales": {
+                        "path": "DC=treasureisland,DC=lab"
+                    },
+                    "Engineering": {
+                        "path": "DC=treasureisland,DC=lab"
+                    },
+                    "HR": {
+                        "path": "DC=treasureisland,DC=lab"
+                    },
+                    "IT": {
+                        "path": "DC=treasureisland,DC=lab"
+                    },
+                    "Accounting": {
+                        "path": "DC=treasureisland,DC=lab"
+                    }
+                },
+                "groups": {
+                    "universal": {},
+                    "global": {
+                        "Sales": {
+                            "path": "OU=Sales,DC=treasureisland,DC=lab"
+                        },
+                        "Engineering": {
+                            "path": "OU=Engineering,DC=treasureisland,DC=lab"
+                        },
+                        "HR": {
+                            "path": "OU=HR,DC=treasureisland,DC=lab"
+                        },
+                        "IT": {
+                            "path": "OU=IT,DC=treasureisland,DC=lab"
+                        },
+                        "Accounting": {
+                            "path": "OU=Accounting,DC=treasureisland,DC=lab"
+                        }
+                    }
+                },
+                "users": {
+                    "mchang": {
+                        "firstname": "Megan",
+                        "surname": "Chang",
+                        "password": "IpOFk6OfXV3YsIF",
+                        "city": "-",
+                        "description": "Megan Chang",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=treasureisland,DC=lab"
+                    },
+                    "rgreen": {
+                        "firstname": "Robert",
+                        "surname": "Green",
+                        "password": "UO2JQFjVVcocEZ5",
+                        "city": "-",
+                        "description": "Robert Green",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=treasureisland,DC=lab"
+                    },
+                    "wsullivan": {
+                        "firstname": "William",
+                        "surname": "Sullivan",
+                        "password": "TMUaSFKZevBrT7f",
+                        "city": "-",
+                        "description": "William Sullivan",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=treasureisland,DC=lab"
+                    },
+                    "kturner": {
+                        "firstname": "Kristen",
+                        "surname": "Turner",
+                        "password": "ih2W6QsFKcZOMm0",
+                        "city": "-",
+                        "description": "Kristen Turner",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=treasureisland,DC=lab"
+                    },
+                    "tsilva": {
+                        "firstname": "Thomas",
+                        "surname": "Silva",
+                        "password": "hrfiVE2YA1BTyCG",
+                        "city": "-",
+                        "description": "Thomas Silva",
+                        "groups": [
+                            "Engineering"
+                        ],
+                        "path": "OU=Engineering,DC=treasureisland,DC=lab"
+                    },
+                    "rwagner": {
+                        "firstname": "Rebecca",
+                        "surname": "Wagner",
+                        "password": "w446ZLR1ArxSPER",
+                        "city": "-",
+                        "description": "Rebecca Wagner",
+                        "groups": [
+                            "HR"
+                        ],
+                        "path": "OU=HR,DC=treasureisland,DC=lab"
+                    },
+                    "jcampos": {
+                        "firstname": "Juan",
+                        "surname": "Campos",
+                        "password": "hUaQax28NNY8uBU",
+                        "city": "-",
+                        "description": "Juan Campos",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=treasureisland,DC=lab"
+                    },
+                    "cking": {
+                        "firstname": "Christine",
+                        "surname": "King",
+                        "password": "hFQBAbjmPgUgupa",
+                        "city": "-",
+                        "description": "Christine King",
+                        "groups": [
+                            "Sales"
+                        ],
+                        "path": "OU=Sales,DC=treasureisland,DC=lab"
+                    },
+                    "rmcgrath": {
+                        "firstname": "Renee",
+                        "surname": "Mcgrath",
+                        "password": "tCJEBdHW2EElS76",
+                        "city": "-",
+                        "description": "Renee Mcgrath",
+                        "groups": [
+                            "Accounting"
+                        ],
+                        "path": "OU=Accounting,DC=treasureisland,DC=lab"
+                    },
+                    "lbarrera": {
+                        "firstname": "Lisa",
+                        "surname": "Barrera",
+                        "password": "5XTUfU8rXUyhhpM",
+                        "city": "-",
+                        "description": "Lisa Barrera",
+                        "groups": [
+                            "IT"
+                        ],
+                        "path": "OU=IT,DC=treasureisland,DC=lab"
+                    },
+                    "kblair": {
+                        "firstname": "Kyle",
+                        "surname": "Blair",
+                        "password": "A5voz5z1SGtP26G",
+                        "city": "-",
+                        "description": "Kyle Blair",
+                        "groups": [
+                            "Domain Admins"
+                        ],
+                        "path": "CN=Users,DC=treasureisland,DC=lab"
+                    }
+                }
+            }
+        }
+    }
+}

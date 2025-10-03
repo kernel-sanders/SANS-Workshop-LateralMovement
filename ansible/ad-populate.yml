@@ -1,0 +1,15 @@
+---
+# Load datas
+- import_playbook: data.yml
+  vars:
+    data_path: "../ad/{{domain_name}}/data/"
+  tags: 'data'
+
+# set AD datas ==================================================================================================
+
+- name: populate ad
+  hosts: dc
+  roles:
+    - { role: 'password_policy', tags: 'policy', try_before_lock: "0", pass_length: "5", lock_duration: "00:00:00", lock_observation: "00:0:00", complexity: false}
+    - adpopulation
+    #some users wont be able to get added because of weak passwords even though pw gen is random.

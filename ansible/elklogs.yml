@@ -1,0 +1,15 @@
+- name: Install ELK
+  hosts: elk_log
+  vars:
+    # Override auto-discovery
+    ludus_elastic_vm:
+      vm_name: elk
+      ansible_host: "{{ hostvars['elk']['ansible_host'] }}"
+
+    # Normal Fleet agent vars
+    #ludus_elastic_enrollment_token: "<TOKEN>"
+    ludus_elastic_fleet_server: "https://{{ hostvars['elk']['ansible_host'] }}:8220"
+
+  roles:
+    - elk_agents
+

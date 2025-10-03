@@ -1,3 +1,0 @@
-domain_name: sandbox.pwnzone.lab
-domain_short_name: sandbox
-domain_admin_user: "{{ domain_short_name }}\\Administrator"

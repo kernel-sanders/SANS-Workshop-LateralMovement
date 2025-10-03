@@ -1,0 +1,64 @@
+---
+# Load datas
+- import_playbook: data.yml
+  vars:
+    data_path: "../ad/{{domain_name}}/data/"
+  tags: 'data'
+
+#vuln logic goes here
+- name: create entrypoint service account 
+  hosts: dc02
+  tasks:
+    - name: add new service account to the domain administrator group 
+      microsoft.ad.user:
+        identity: svc_entrypoint
+        password: ChangeMe1234!
+        spn:
+          set:
+            - HTTP/ws01.sandbox.pwnzone.lab
+        state: present
+        groups:
+          set: Domain Admins
+        password_never_expires: true
+  ignore_errors: true
+
+# --------------------------------------------------------------------
+# specifics vulns linked to the scenario are here
+- name: plant fakespool server
+  hosts: dc
+  roles:
+    - fakespooler
+
+# --- LAT MOVE WORKSHOP MODS START HERE ---
+
+# . Install Sysmon on all Windows hosts
+- name: Install and Configure Sysmon on Windows hosts
+  hosts: domain
+  roles:
+    - sysmon
+
+# . Install Wireshark on all Windows hosts for network analysis
+- name: Install Wireshark on Windows hosts
+  hosts: domain
+  roles:
+    - wireshark
+
+# . Create a scheduled task to load a privileged user's hash into memory on WS01
+- name: Schedule task for privileged user hash on workstation
+  hosts: srv02
+  vars:
+    # Ensure this user is a Domain Admin in sandbox.pwnzone.lab for the PtH/OpTH demos
+    privileged_username: "adm_asnyder"
+    # IMPORTANT: Replace with the actual password for adm_asnyder from your ad_data_sandbox.pwnzone.lab.yml
+    privileged_password: "5u8p19T1jVqkW6K"
+    privileged_domain: "sandbox.pwnzone.lab"
+  roles:
+    - privileged_user_task
+
+# 7. Enable PowerShell Script Block Logging (FINAL STEP - may break WinRM connectivity)
+- name: Enable PowerShell Script Block Logging on Windows hosts
+  hosts: domain
+  roles:
+    - powershell_logging
+
+# --- LAT MOVE WORKSHOP MODS END HERE ---

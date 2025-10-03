@@ -1,5 +1,0 @@
-parent_domain_password: password
-safemode_password: SuperSecretSafeModePasswordForTheWin!?
-parent_domain: pwnzone.lab
-domain: sandbox.pwnzone.lab
-hostname: sandbox-dc01

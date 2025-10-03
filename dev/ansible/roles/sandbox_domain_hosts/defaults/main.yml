@@ -1,3 +1,0 @@
-domain_fqdn: sandbox.pwnzone.lab
-ansible_pass: password
-domain_netbios: SANDBOX

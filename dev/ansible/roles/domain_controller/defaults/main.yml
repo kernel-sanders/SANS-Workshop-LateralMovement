@@ -1,4 +1,0 @@
-dc_hostname: #check hostvars
-netbios_name: #check hostvars
-dns_dom_name: #check hostvars
-safemode_pass: #check hostvars
