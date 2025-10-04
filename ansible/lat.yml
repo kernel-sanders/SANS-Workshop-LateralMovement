@@ -32,10 +32,10 @@
 # --- LAT MOVE WORKSHOP MODS START HERE ---
 
 # . Install Sysmon on all Windows hosts
-- name: Install and Configure Sysmon on Windows hosts
-  hosts: domain
-  roles:
-    - sysmon
+#- name: Install and Configure Sysmon on Windows hosts
+#  hosts: domain
+#  roles:
+#    - sysmon
 
 # . Install Wireshark on all Windows hosts for network analysis
 - name: Install Wireshark on Windows hosts
