@@ -1,6 +1,6 @@
 ---
 # Wireshark installation defaults
-wireshark_version: "4.4.9"
+wireshark_version: "latest"
 wireshark_installer_url: "https://2.na.dl.wireshark.org/win64/Wireshark-{{ wireshark_version }}-x64.exe"
 wireshark_installer_path: "C:\\temp\\Wireshark-{{ wireshark_version }}-x64.exe"
 wireshark_install_dir: "C:\\Program Files\\Wireshark"
